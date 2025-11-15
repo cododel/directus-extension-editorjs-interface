@@ -181,49 +181,49 @@ function getSanitizedValue(value: any): EditorJS.OutputData | null {
 
 <style lang="css" scoped>
 .disabled {
-	color: var(--foreground-subdued);
-	background-color: var(--background-subdued);
-	border-color: var(--border-normal);
+	color: var(--theme--foreground-subdued);
+	background-color: var(--theme--background-subdued);
+	border-color: var(--theme--border-color);
 	pointer-events: none;
 }
 
 .bordered {
-	padding: var(--input-padding) 4px var(--input-padding) calc(var(--input-padding) + 8px) !important;
-	background-color: var(--background-page);
-	border: var(--border-width) solid var(--border-normal);
-	border-radius: var(--border-radius);
+	padding: var(--theme--form--field--input--padding) 4px var(--theme--form--field--input--padding) calc(var(--theme--form--field--input--padding) + 8px) !important;
+	background-color: var(--theme--background);
+	border: var(--theme--border-width) solid var(--theme--border-color);
+	border-radius: var(--theme--border-radius);
 }
 
 .bordered:hover {
-	border-color: var(--border-normal-alt);
+	border-color: var(--theme--border-color-accent);
 }
 
 .bordered:focus-within {
-	border-color: var(--primary);
+	border-color: var(--theme--primary);
 }
 
 .monospace {
-	font-family: var(--family-monospace);
+	font-family: var(--theme--fonts--monospace--font-family);
 }
 
 .serif {
-	font-family: var(--family-serif);
+	font-family: var(--theme--fonts--serif--font-family);
 }
 
 .sans-serif {
-	font-family: var(--family-sans-serif);
+	font-family: var(--theme--fonts--sans--font-family);
 }
 
 .uploader-drawer-content {
-	padding: var(--content-padding);
+	padding: 20px;
 	padding-top: 0;
-	padding-bottom: var(--content-padding);
+	padding-bottom: 20px;
 }
 
 .uploader-preview-image {
-	margin-bottom: var(--form-vertical-gap);
-	background-color: var(--background-normal);
-	border-radius: var(--border-radius);
+	margin-bottom: var(--theme--form--row-gap);
+	background-color: var(--theme--background-normal);
+	border-radius: var(--theme--border-radius);
 }
 
 .uploader-preview-image img {

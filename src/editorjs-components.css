@@ -2,9 +2,9 @@
 
 .codex-editor .cdx-attaches,
 .codex-editor .cdx-personality {
-	color: var(--foreground-normal);
-	background: var(--background-normal);
-	border-color: var(--border-normal);
+	color: var(--theme--foreground);
+	background: var(--theme--background-normal);
+	border-color: var(--theme--border-color);
 	box-shadow: unset;
 }
 
@@ -15,7 +15,7 @@
 	line-height: inherit;
 }
 .codex-editor .ce-paragraph[data-placeholder]:empty::before {
-	color: var(--foreground-subdued);
+	color: var(--theme--foreground-subdued);
 }
 
 /* Quote block */
@@ -27,9 +27,9 @@
 /* Image Tool */
 
 .codex-editor .image-tool {
-	--bg-color: var(--background-normal-alt);
-	--front-color: var(--primary);
-	--border-color: var(--border-normal);
+	--bg-color: var(--theme--background-accent);
+	--front-color: var(--theme--primary);
+	--border-color: var(--theme--border-color);
 }
 
 /* Personality */
@@ -45,7 +45,7 @@
 }
 
 .codex-editor .cdx-personality__link {
-	color: var(--primary);
+	color: var(--theme--primary);
 	font-size: 0.72em;
 }
 
@@ -53,8 +53,8 @@
 
 .codex-editor .cdx-checklist__item-checkbox {
 	background: transparent;
-	border-color: var(--border-normal);
-	border-width: var(--border-width);
+	border-color: var(--theme--border-color);
+	border-width: var(--theme--border-width);
 	border-radius: 4px;
 }
 
@@ -63,8 +63,8 @@
 }
 
 .codex-editor .cdx-checklist__item--checked .cdx-checklist__item-checkbox {
-	background: var(--primary);
-	border-color: var(--primary);
+	background: var(--theme--primary);
+	border-color: var(--theme--primary);
 }
 
 .codex-editor .cdx-checklist__item--checked .cdx-checklist__item-checkbox::after {
@@ -83,16 +83,16 @@
 
 .cdx-attaches--with-file .cdx-attaches__file-icon {
 	padding: 5px;
-	background: var(--background-normal-alt);
-	border-radius: var(--border-radius);
+	background: var(--theme--background-accent);
+	border-radius: var(--theme--border-radius);
 }
 
 .codex-editor .cdx-attaches--with-file .cdx-attaches__title {
-	color: var(--foreground-normal);
+	color: var(--theme--foreground);
 }
 
 .codex-editor .cdx-attaches__size {
-	color: var(--foreground-subdued);
+	color: var(--theme--foreground-subdued);
 }
 
 .cdx-attaches--with-file .cdx-attaches__download-button svg {
@@ -122,55 +122,55 @@
 /* Marker */
 
 .codex-editor .cdx-marker {
-	color: var(--warning-175);
-	background: var(--warning-alt);
-	outline: 2px solid var(--warning-alt);
+	color: var(--theme--warning-background);
+	background: var(--theme--warning-background);
+	outline: 2px solid var(--theme--warning-background);
 }
 
 /* tc module */
 
 .codex-editor .tc-wrap {
 	--color-background: var(--v-list-item-color-hover);
-	--color-border: var(--border-normal);
+	--color-border: var(--theme--border-color);
 	--color-background-hover: var(--v-list-item-background-color-hover);
 }
 
 .codex-editor .tc-popover {
-	--color-background: var(--background-normal);
-	--color-border: var(--background-normal);
-	--color-background-hover: var(--background-normal-alt);
+	--color-background: var(--theme--background-normal);
+	--color-border: var(--theme--background-normal);
+	--color-background-hover: var(--theme--background-accent);
 }
 
 .tc-cell--selected,
 .tc-cell--selected::after,
 .tc-row--selected,
 .tc-row--selected::after {
-	background: var(--background-highlight);
+	background: var(--theme--background-accent);
 }
 
 .tc-toolbox {
 	--toggler-dots-color: var(--foreground-normal);
-	--toggler-dots-color-hovered: var(--foreground-normal-alt);
+	--toggler-dots-color-hovered: var(--theme--foreground);
 }
 
 .tc-toolbox__toggler:hover {
-	fill: var(--background-normal-alt) !important;
+	fill: var(--theme--background-accent) !important;
 }
 
 .codex-editor .tc-toolbox__toggler svg rect:first-child {
 	/* This is very ugly, but there no other way to set background of the element */
-	fill: var(--background-normal) !important;
-	border-radius: var(--border-radius);
+	fill: var(--theme--background-normal) !important;
+	border-radius: var(--theme--border-radius);
 }
 
 .codex-editor .tc-toolbox__toggler:hover svg rect:first-child {
 	/* This is very ugly, but there no other way to set background of the element */
-	fill: var(--background-normal-alt) !important;
+	fill: var(--theme--background-accent) !important;
 }
 
 .tc-add-column:hover,
 .tc-add-row:hover {
-	background-color: var(--primary-alt);
+	background-color: var(--theme--primary-accent);
 }
 
 .tc-add-row:hover::before {

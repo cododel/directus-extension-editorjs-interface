@@ -65,7 +65,7 @@
 }
 
 .codex-editor .ce-block a {
-	color: var(--primary);
+	color: var(--theme--primary);
 }
 
 .codex-editor .ce-block ul,
@@ -84,7 +84,7 @@
 
 .codex-editor .ce-block b,
 .codex-editor .ce-block strong {
-	color: var(--foreground-normal-alt);
+	color: var(--theme--foreground);
 	font-weight: 600;
 }
 
@@ -93,7 +93,7 @@
 	overflow: auto;
 	font-size: 18px;
 	line-height: 24px;
-	background-color: var(--background-normal-alt);
+	background-color: var(--theme--background-accent);
 	border-radius: 4px;
 }
 
@@ -101,7 +101,7 @@
 	font-size: 18px;
 	font-style: italic;
 	line-height: 34px;
-	border-left: 2px dashed var(--border-normal);
+	border-left: 2px dashed var(--theme--border-color);
 }
 
 .codex-editor .ce-block video,
@@ -132,12 +132,12 @@
 
 .codex-editor .ce-block table th,
 .codex-editor .ce-block table td {
-	border: 1px solid var(--border-normal);
+	border: 1px solid var(--theme--border-color);
 }
 
 .codex-editor .ce-block .tc-table__wrap,
 .codex-editor .ce-block .tc-table__cell {
-	border-color: var(--border-normal);
+	border-color: var(--theme--border-color);
 }
 
 .codex-editor .ce-block figure {
@@ -148,6 +148,6 @@
 .codex-editor .ce-block figure figcaption {
 	display: block;
 	margin-top: 0.25rem;
-	color: var(--foreground-subdued);
+	color: var(--theme--foreground-subdued);
 	text-align: center;
 }

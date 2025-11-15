@@ -1,59 +1,60 @@
 .codex-editor {
-	--bg-color: var(--background-normal) !important;
-	--front-color: var(--foreground-normal) !important;
-	--border-color: var(--border-normal) !important;
+	--bg-color: var(--theme--background-normal) !important;
+	--front-color: var(--theme--foreground) !important;
+	--border-color: var(--theme--border-color) !important;
 }
 
 .codex-editor .ce-toolbar__plus,
 .codex-editor .ce-toolbar__settings-btn {
-	color: var(--foreground-normal);
-	background-color: var(--background-normal);
-	border-radius: var(--border-radius);
+	color: var(--theme--foreground);
+	background-color: var(--theme--background-normal);
+	border-radius: var(--theme--border-radius);
+
 }
 
 .codex-editor .ce-toolbar__plus:hover,
 .codex-editor .ce-toolbar__settings-btn:hover {
-	background-color: var(--background-normal-alt);
+	background-color: var(--theme--background-accent);
 }
 
 .codex-editor .ce-toolbar__plus svg,
 .codex-editor .ce-toolbar__settings-btn svg {
-	fill: var(--foreground-normal) !important;
+	fill: var(--theme--foreground) !important;
 }
 
 .codex-editor .cdx-settings-button svg,
 .codex-editor .ce-inline-toolbar__dropdown svg,
 .codex-editor .ce-inline-toolbar .ce-inline-tool svg,
 .codex-editor .ce-settings .ce-settings__button svg {
-	fill: var(--v-list-color) !important;
+	fill: var(--theme--foreground) !important;
 }
 
 .codex-editor .ce-inline-toolbar .ce-inline-tool--active svg,
 .codex-editor .ce-settings .cdx-settings-button--active svg {
-	fill: var(--primary) !important;
+	fill: var(--theme--primary) !important;
 }
 
 .codex-editor .ce-toolbar .ce-toolbox__button svg,
 .codex-editor .ce-toolbar .ce-toolbox__button:hover svg {
-	fill: var(--foreground-normal);
+	fill: var(--theme--foreground);
 }
 
 .codex-editor .cdx-loader::before {
-	border: 3px solid var(--background-normal-alt);
-	border-left-color: var(--primary);
+	border: 3px solid var(--theme--background-accent);
+	border-left-color: var(--theme--primary);
 }
 
 .codex-editor .cdx-search-field {
-	border-radius: var(--border-radius) !important;
+	border-radius: var(--theme--border-radius) !important;
 	border: none;
-	background: var(--background-subdued);
+	background: var(--theme--background-subdued);
 }
 
 .codex-editor .ce-popover {
-	background: var(--background-page);
-	border-color: var(--border-normal);
-	border-width: var(--border-width);
-	border-radius: var(--border-radius);
+	background: var(--theme--popover--menu--background);
+	border: 1px solid var(--theme--border-color);
+	border-radius: var(--theme--popover--menu--border-radius);
+	box-shadow: var(--theme--popover--menu--box-shadow);
 }
 
 .codex-editor .ce-popover__item--focused {
@@ -67,30 +68,30 @@
 }
 
 .codex-editor .ce-popover__item-icon {
-	background: var(--background-page);
-	border-color: var(--background-normal-alt);
+	background: transparent;
+	border-color: var(--theme--border-color);
 }
 
 .codex-editor .ce-popover__item-icon svg {
-	fill: var(--foreground-normal);
+	fill: var(--theme--foreground);
 }
 
 .codex-editor .ce-popover__item-secondary-label {
-	color: var(--foreground-subdued);
+	color: var(--theme--foreground-subdued);
 }
 
 .codex-editor .ce-popover__items:not(:first-child) {
-	border-top: var(--border-width) solid var(--border-normal);
+	border-top: var(--theme--border-width) solid var(--theme--border-color);
 	padding-top: 8px;
 }
 
 .codex-editor .image-tool--loading .image-tool__image,
 .codex-editor .ce-block--selected .ce-block__content {
-	background: var(--module-background-alt);
+	background: var(--background-normal);
 }
 
 .codex-editor .image-tool--loading .image-tool__image {
-	border-color: var(--border-normal);
+	border-color: var(--theme--border-color);
 }
 
 .codex-editor .ce-inline-toolbar__toggler-and-button-wrapper {
@@ -99,7 +100,7 @@
 
 .codex-editor .ce-inline-toolbar__dropdown {
 	margin: 0;
-	border-color: var(--border-normal);
+	border-color: var(--theme--border-color);
 }
 
 .codex-editor .ce-inline-tool {
@@ -107,11 +108,11 @@
 }
 
 .codex-editor .ce-settings__button--confirm.ce-settings__button--confirm {
-	background-color: var(--danger-110) !important;
+	background-color: var(--theme--danger-background) !important;
 }
 
 .codex-editor .ce-settings__button--confirm.ce-settings__button--confirm svg {
-	fill: var(--foreground-normal-alt) !important;
+	fill: var(--theme--foreground-accent) !important;
 }
 
 /* Tooltips */
@@ -122,12 +123,12 @@
 
 .ct:before,
 .ct:after {
-	background-color: var(--background-inverted);
+	background-color: var(--theme--background-normal);
 }
 
 .ct__content {
-	background-color: var(--background-inverted);
-	color: var(--foreground-inverted);
+	background-color: var(--theme--background-normal);
+	color: var(--theme--foreground-accent);
 	border-radius: 4px;
 	padding: 8px;
 	font-size: inherit;
@@ -146,10 +147,10 @@
 .codex-editor .ce-conversion-toolbar,
 .codex-editor .ce-inline-toolbar,
 .codex-editor .ce-settings {
-	background: var(--background-subdued);
-	border-color: var(--border-normal);
+	background: var(--theme--background-subdued);
+	border-color: var(--theme--border-color);
 	border-width: var(--border-width);
-	border-radius: var(--border-radius);
+	border-radius: var(--theme--border-radius);
 }
 
 .codex-editor .cdx-settings-button:hover,
@@ -163,7 +164,7 @@
 .codex-editor .ce-conversion-toolbar .ce-conversion-tool--focused:not(:hover) {
 	--webkit-box-shadow: unset;
 
-	color: var(--primary);
+	color: var(--theme--primary);
 	background-color: var(--v-list-item-background-color-hover) !important;
 	box-shadow: unset;
 }
@@ -177,7 +178,7 @@
 }
 
 .codex-editor .ce-conversion-toolbar__label {
-	color: var(--foreground-normal);
+	color: var(--theme--foreground);
 }
 
 .codex-editor .ce-conversion-tool__icon {
@@ -191,33 +192,33 @@
 }
 
 .codex-editor .ce-code__textarea {
-	font-family: var(--family-monospace);
+	font-family: var(--theme--fonts--monospace--font-family);
 }
 
 .codex-editor .cdx-input,
 .codex-editor .ce-code__textarea {
-	color: var(--foreground-normal);
+	color: var(--theme--foreground);
 	font-size: inherit;
-	background-color: var(--background-page);
-	border: var(--border-width) solid var(--border-normal);
-	border-radius: var(--border-radius);
+	background-color: var(--theme--background);
+	border: var(--theme--border-width) solid var(--theme--border-color);
+	border-radius: var(--theme--border-radius);
 	box-shadow: unset;
 }
 
 .codex-editor .cdx-input:hover,
 .codex-editor .ce-code__textarea:hover {
-	border-color: var(--border-normal-alt);
+	border-color: var(--theme--border-color-accent);
 }
 
 .codex-editor .cdx-input:focus,
 .codex-editor .ce-code__textarea:focus {
-	border-color: var(--primary);
+	border-color: var(--theme--primary);
 }
 
 .codex-editor .ce-inline-tool-input {
-	color: var(--primary);
-	background: var(--background-normal);
-	border-top-color: var(--border-normal);
+	color: var(--theme--primary);
+	background: var(--theme--background-normal);
+	border-top-color: var(--theme--border-color);
 }
 
 /* Buttons */
@@ -228,8 +229,8 @@
 	font-size: var(--v-button-font-size);
 	text-decoration: none;
 	background-color: var(--v-button-background-color);
-	border: var(--border-width) solid var(--v-button-background-color);
-	border-radius: var(--border-radius);
+	border: var(--theme--border-width) solid var(--v-button-background-color);
+	border-radius: var(--theme--border-radius);
 	cursor: pointer;
 }
 
