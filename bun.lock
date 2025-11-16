@@ -26,6 +26,7 @@
         "@editorjs/warning": "^1.4.1",
         "@itech-indrustries/editorjs-strikethrough": "^1.0.0",
         "@types/lodash": "^4.17.20",
+        "@types/minimatch": "^6.0.0",
         "directus-codestyle": "dimitrov-adrian/directus-codestyle",
         "editorjs-alert": "^1.1.4",
         "editorjs-list": "^2.1.4",

@@ -5,6 +5,7 @@
 		"moduleResolution": "node",
 		"strict": true,
 		"allowJs": true,
+		"noEmit": true,
 		"noFallthroughCasesInSwitch": true,
 		"esModuleInterop": true,
 		"noImplicitAny": true,
@@ -23,7 +24,9 @@
 		"forceConsistentCasingInFileNames": true,
 		"allowSyntheticDefaultImports": true,
 		"isolatedModules": true,
-		"rootDir": "./src"
+		"rootDir": "./src",
+		"types": []
 	},
-	"include": ["./src/**/*.ts"]
+	"include": ["./src/**/*.ts"],
+	"exclude": ["./src/**/*.js", "./node_modules"]
 }
