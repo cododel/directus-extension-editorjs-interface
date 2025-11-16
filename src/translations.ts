@@ -1,6 +1,11 @@
 import { I18nConfig } from '@editorjs/editorjs';
 
 export default function getTranslations(t: (str: string) => string): I18nConfig {
+	const translate = (key: string, fallback: string) => {
+		const translated = t(key);
+		return translated === key ? fallback : translated;
+	};
+
 	return {
 		messages: {
 			ui: {
@@ -46,8 +51,8 @@ export default function getTranslations(t: (str: string) => string): I18nConfig 
 					'Add a link': t('field_options.directus_roles.fields.link_placeholder'),
 				},
 				image: {
-					Caption: t('title'),
-					'Select an Image': t('interfaces.file-image.description'),
+					Caption: translate('title', 'Title'),
+					'Select an Image': translate('interfaces.file-image.description', 'Select an image'),
 					'With border': t('displays.formatted-value.border_label'),
 					'Stretch image': t('full_width'),
 				},
@@ -59,7 +64,13 @@ export default function getTranslations(t: (str: string) => string): I18nConfig 
 					'Enter a code': t('interfaces.input-code.placeholder'),
 				},
 				quote: {
-					'Enter a quote': t('wysiwyg_options.blockquote'),
+					'Enter a quote': translate('wysiwyg_options.blockquote', 'Enter a quote'),
+					'Select an image': translate('interfaces.file-image.description', 'Select an image'),
+					'Add an image': translate('interfaces.file-image.description', 'Add an image'),
+					'Remove image': translate('delete_label', 'Remove image'),
+					'Enter author': translate('wysiwyg_options.blockquote_author', 'Enter author'),
+					'No file access': translate('you_cannot_edit_this_field', 'No file access'),
+					'Enter quote content': translate('wysiwyg_options.blockquote_placeholder', 'Enter quote content'),
 				},
 				nestedlist: {
 					Ordered: t('wysiwyg_options.numlist'),

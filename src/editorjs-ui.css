@@ -101,11 +101,6 @@
 	background: var(--theme--border-color-subdued);
 }
 
-.codex-editor .ce-popover__items:not(:first-child) {
-	border-top: var(--theme--border-width) solid var(--theme--border-color);
-	padding-top: 8px;
-}
-
 .codex-editor .image-tool--loading .image-tool__image,
 .codex-editor .ce-block--selected .ce-block__content {
 	background: var(--background-normal);
@@ -125,7 +120,11 @@
 }
 
 .codex-editor .ce-inline-tool {
-	padding: 0 10px !important;
+	padding: 0 !important;
+}
+.codex-editor .ce-inline-toolbar .ce-inline-tool svg{
+	color: var(--theme--foreground-accent) !important;
+  fill: none !important;
 }
 
 .codex-editor .ce-settings__button--confirm.ce-settings__button--confirm {

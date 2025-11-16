@@ -1,6 +1,5 @@
 import SimpleImageTool from '@editorjs/simple-image';
 import ParagraphTool from '@editorjs/paragraph';
-import QuoteTool from '@editorjs/quote';
 import WarningTool from '@editorjs/warning';
 import ChecklistTool from '@editorjs/checklist';
 import DelimiterTool from '@editorjs/delimiter';
@@ -20,6 +19,7 @@ import ListTool from 'editorjs-list';
 import ImageTool from './custom-plugins/plugin-image-patch.js';
 import AttachesTool from './custom-plugins/plugin-attaches-patch.js';
 import PersonalityTool from './custom-plugins/plugin-personality-patch.js';
+import QuoteNestedTool from './custom-plugins/plugin-quote-nested.js';
 
 export type UploaderConfig = {
 	addTokenToURL: (url: string, token: string) => string;
@@ -37,6 +37,16 @@ export default function getTools(
 ): Record<string, object> {
 	const tools: Record<string, any> = {};
 	const fileRequiresTools = ['attaches', 'personality', 'image'];
+	const fallbackNestedToolNames = [
+		'paragraph',
+		'header',
+		'list',
+		'nestedlist',
+		'checklist',
+		'delimiter',
+		'inlinecode',
+		'marker',
+	];
 
 	const defaults: Record<string, any> = {
 		header: {
@@ -84,11 +94,6 @@ export default function getTools(
 			class: TableTool,
 			inlineToolbar: true,
 		},
-		quote: {
-			class: QuoteTool,
-			inlineToolbar: true,
-			shortcut: 'CMD+SHIFT+O',
-		},
 		marker: {
 			class: MarkerTool,
 			shortcut: 'CMD+SHIFT+M',
@@ -133,12 +138,38 @@ export default function getTools(
 		},
 	};
 
+	const shouldRegisterQuote = selection.includes('quote');
+
 	for (const toolName of selection) {
+		if (toolName === 'quote') continue;
 		if (!haveFilesAccess && fileRequiresTools.includes(toolName)) continue;
 
 		if (toolName in defaults) {
 			tools[toolName] = defaults[toolName];
 		}
+	}
+
+	if (shouldRegisterQuote) {
+		let nestedToolsEntries = Object.entries(tools).filter(([name]) => name !== 'alignmentTune');
+
+		if (nestedToolsEntries.length === 0) {
+			nestedToolsEntries = fallbackNestedToolNames
+				.filter((name) => name in defaults)
+				.map((name) => [name, defaults[name]]);
+		}
+
+		const nestedTools = Object.fromEntries(nestedToolsEntries);
+
+		tools.quote = {
+			class: QuoteNestedTool,
+			inlineToolbar: true,
+			shortcut: 'CMD+SHIFT+O',
+			config: {
+				nestedTools,
+				uploader: haveFilesAccess ? uploaderConfig : undefined,
+				t: uploaderConfig.t,
+			},
+		};
 	}
 
 	if ('alignmentTune' in tools) {

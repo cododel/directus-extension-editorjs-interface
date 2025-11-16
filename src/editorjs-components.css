@@ -24,6 +24,137 @@
 	padding-left: 22px;
 }
 
+.codex-editor .cdx-quote-nested {
+	display: grid;
+	grid-template-columns: minmax(80px, 120px) 1fr;
+	gap: 16px;
+	padding: 16px;
+	margin: 16px 0;
+	color: var(--theme--foreground);
+	background-color: var(--theme--background-normal);
+	border: var(--theme--border-width) solid var(--theme--border-color);
+	border-left-width: 4px;
+	border-radius: var(--theme--border-radius);
+}
+
+.codex-editor .cdx-quote-nested__image {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.codex-editor .cdx-quote-nested__image-area {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	min-height: 220px;
+	padding: 12px;
+	text-align: center;
+	color: var(--theme--foreground-subdued);
+	background-color: var(--theme--background-subdued);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	border: 2px dashed var(--theme--border-color);
+	border-radius: var(--theme--border-radius);
+	cursor: pointer;
+	transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.codex-editor .cdx-quote-nested__image-icon {
+	display: block;
+	font-size: 2rem;
+	line-height: 1;
+}
+.codex-editor .cdx-quote-nested__image-icon-hidden {
+	opacity: 0;
+	visibility: hidden;
+}
+
+.codex-editor .cdx-quote-nested [data-icon] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.codex-editor .cdx-quote-nested [data-icon]::after {
+	content: attr(data-icon);
+	font-family: 'Material Symbols';
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'liga';
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 1;
+	letter-spacing: normal;
+	text-transform: none;
+	white-space: nowrap;
+	direction: ltr;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	font-feature-settings: 'liga';
+	font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.codex-editor .cdx-quote-nested__image-area:hover {
+	border-color: var(--theme--primary);
+	color: var(--theme--foreground);
+}
+
+.codex-editor .cdx-quote-nested__image-area--filled {
+	border-style: solid;
+}
+
+.codex-editor .cdx-quote-nested__image-area--disabled {
+	cursor: not-allowed;
+}
+
+.codex-editor .cdx-quote-nested__image-text {
+	pointer-events: none;
+	font-size: 0.9em;
+}
+
+.codex-editor .cdx-quote-nested__image-remove {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	padding: 3px;
+	font-size: 0.8em;
+	color: var(--theme--foreground);
+	background: var(--theme--background-accent);
+	border: var(--theme--border-width) solid transparent;
+	border-radius: var(--theme--border-radius);
+	cursor: pointer;
+}
+
+.codex-editor .cdx-quote-nested__image-remove[disabled] {
+	display: none;
+}
+
+.codex-editor .cdx-quote-nested__content {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.codex-editor .cdx-quote-nested__editor {
+  border: var(--theme--border-width) solid var(--theme--border-color-accent);
+  border-radius: var(--theme--border-radius);
+	min-height: 100%;
+}
+
+
 /* Image Tool */
 
 .codex-editor .image-tool {

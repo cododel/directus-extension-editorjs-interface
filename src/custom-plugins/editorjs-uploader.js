@@ -44,9 +44,7 @@ export default class Uploader {
 		if (this.getCurrentFile) {
 			const currentPreview = this.getCurrentFile();
 			if (currentPreview) {
-				this.config.uploader.setCurrentPreview(
-					this.config.uploader.addTokenToURL(currentPreview) + '&key=system-large-contain'
-				);
+				this.config.uploader.setCurrentPreview(this.config.uploader.addTokenToURL(currentPreview));
 			}
 		}
 
@@ -74,7 +72,7 @@ export default class Uploader {
 				},
 			};
 
-			onPreview(this.config.uploader.addTokenToURL(response.file.fileURL));
+			onPreview(this.config.uploader.addTokenToURL(response.file.url));
 			this.onUpload(response);
 		});
 	}
