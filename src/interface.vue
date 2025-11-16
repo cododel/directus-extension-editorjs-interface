@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, watch, withDefaults } from 'vue';
+import { ref, onMounted, onUnmounted, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useApi, useStores } from '@directus/extensions-sdk';
 import EditorJS from '@editorjs/editorjs';
@@ -237,6 +237,8 @@ function getSanitizedValue(value: any): EditorJS.OutputData | null {
 }
 </style>
 
-<style src="./editorjs-ui.css"></style>
-<style src="./editorjs-components.css"></style>
-<style src="./editorjs-content-reset.css"></style>
+<style>
+@import './editorjs-ui.css';
+@import './editorjs-components.css';
+@import './editorjs-content-reset.css';
+</style>

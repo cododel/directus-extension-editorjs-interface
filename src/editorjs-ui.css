@@ -57,6 +57,11 @@
 	box-shadow: var(--theme--popover--menu--box-shadow);
 }
 
+.codex-editor .ce-popover__container {
+	background: var(--theme--popover--menu--background);
+  border: 1px solid var(--theme--border-color-subdued);
+}
+
 .codex-editor .ce-popover__item--focused {
 	--webkit-box-shadow: none;
 	box-shadow: none;
@@ -76,8 +81,24 @@
 	fill: var(--theme--foreground);
 }
 
+.codex-editor .ce-popover-item__icon {
+	background: none;
+	border: 1px solid var(--theme--border-color-subdued);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.codex-editor .ce-popover-item__icon svg {
+  width: auto;
+  height: auto;
+}
+
 .codex-editor .ce-popover__item-secondary-label {
 	color: var(--theme--foreground-subdued);
+}
+
+.codex-editor .ce-popover-item-separator__line {
+	background: var(--theme--border-color-subdued);
 }
 
 .codex-editor .ce-popover__items:not(:first-child) {
